@@ -21,7 +21,9 @@ def hello_world():
     if request.method=='POST':
         title = request.form['title']
         desc = request.form['desc']
-        todo = Todo(title=title, desc=desc)
+        time = request.form['time']
+
+        todo = Todo(title=title, desc=desc ,time=time  )
         db.session.add(todo)
         db.session.commit()
         
